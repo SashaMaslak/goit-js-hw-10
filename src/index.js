@@ -18,7 +18,7 @@ function onSearch(e) {
    
    // const searchCountry = e.target.value;
    if (!searchCountry) {
-      onFetchError();
+      onFetchError(searchCountry);
       return refs.countryList.innerHTML = '';
    }
 
@@ -84,10 +84,18 @@ function renderCountryCard(country) {
    onFetchError();
 }
 
-function onFetchError() {
+function onFetchError(searchCountry) {
    console.log('its - CATCH');
    refs.countryList.innerHTML = '';
    refs.countryInfo.innerHTML = '';
+   if (searchCountry === '') {
+      return Notify.failure('Field in input is empty', {
+         ID: 'MKA',
+         timeout: 2500,
+         width: '380px',
+         position: 'center-top',
+      });
+   }
       return Notify.failure('Oops, there is no country with that name', {
          ID: 'MKA',
          timeout: 2500,
