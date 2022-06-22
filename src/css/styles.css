@@ -10,6 +10,7 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  font-family: 'Acme', sans-serif;
 }
 
 #search-box {
@@ -33,6 +34,5 @@ ul {
 }
 
 .item-info {
-  font-family: 'Lobster', cursive;
   font-size: 24px;
 }
